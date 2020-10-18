@@ -1,10 +1,24 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
+import { connect } from 'react-redux'
+import { getCarasoulImages } from './store/thunk/imageCarasoul'
 
-class App extends Component {
-  render() {
-    return <div className="App">Enter Point</div>
+const App = (props) => {
+  useEffect(() => {
+    props.getCarasoulImages()
+  }, [])
+  return (
+    <div className="App" onClick={() => props.getCarasoulImages()}>
+      Enter Point
+    </div>
+  )
+}
+const mapStateToProps = (state) => {
+  return {
+    carasoul: state.carasoul,
   }
 }
-
-export default App
+const mapDispatchToProps = {
+  getCarasoulImages,
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App)
