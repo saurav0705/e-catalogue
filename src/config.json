@@ -1,4 +1,0 @@
-{
-  "API_LOCAL": "http://localhost:8000/",
-  "API_DEPLOYED": "https://hcmemorial.herokuapp.com"
-}
