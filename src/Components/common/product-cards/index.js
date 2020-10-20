@@ -11,7 +11,7 @@ import {
 import { Img } from 'react-image'
 import ImageLoader from '../image-loader'
 
-const ProductCards = ({ key }) => {
+const ProductCards = ({ key, data }) => {
   const [wishlisted, setWishlisted] = useState(false)
   const [count, setCount] = useState(0)
 
@@ -36,14 +36,9 @@ const ProductCards = ({ key }) => {
   return (
     <CardContainer key={key}>
       <ImageContainer>
-        <Img
-          src={
-            'https://drive.google.com/uc?id=1RIGEIFyJlVwKWIDdQGNGB7Ol0UhAptvf'
-          }
-          loader={<ImageLoader />}
-        />
+        <Img src={data.images[0]} loader={<ImageLoader />} />
       </ImageContainer>
-      <LabelContainer>Chemistry Equipments</LabelContainer>
+      <LabelContainer>{data.name}</LabelContainer>
       <ActionContainer>
         <WishListButton
           wishlisted={wishlisted}

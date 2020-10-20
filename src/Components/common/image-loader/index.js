@@ -5,7 +5,7 @@ import giphy from 'src/resources/images/giphy.gif'
 const ImageLoader = (props) => {
   return (
     <ImageLoaderContainer>
-      <img src={giphy} alt="loading-image" />
+      <img src={giphy} alt="loading" />
     </ImageLoaderContainer>
   )
 }

@@ -22,9 +22,10 @@ export const ImageContainer = styled.div`
 export const LabelContainer = styled.div`
   text-align: center;
   margin-top: 5px;
-  font-size: 1.5em;
+  font-size: clamp(1rem, 1.5rem, 2rem);
   text-transform: capitalize;
   padding: 8px;
+  height: 80px;
 `
 
 export const ActionContainer = styled.div`

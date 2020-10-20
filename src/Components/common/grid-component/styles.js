@@ -5,6 +5,7 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   grid-gap: 3em 2em;
   margin: 20px auto;
+  justify-content: space-around;
 `
 
 export const GridWrapper = styled.div``
