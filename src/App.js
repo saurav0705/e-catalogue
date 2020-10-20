@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import './App.css'
 import { connect } from 'react-redux'
 import { getCarasoulImages } from './store/thunk/imageCarasoul'
+import ProductCards from './Components/common/product-cards'
 
 const App = (props) => {
   useEffect(() => {
@@ -9,7 +10,7 @@ const App = (props) => {
   }, [])
   return (
     <div className="App" onClick={() => props.getCarasoulImages()}>
-      Enter Point
+      <ProductCards />
     </div>
   )
 }

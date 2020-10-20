@@ -91,6 +91,8 @@ module.exports = {
         process.env.NODE_ENV === 'production'
           ? path.resolve(__dirname, '../src/config_prod.json')
           : path.resolve(__dirname, '../src/config_dev.json'),
+      theme: path.resolve(__dirname, '../src/theme.js'),
+      src: path.resolve(__dirname, '../src/'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
