@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import { theme } from 'theme'
 export const CardContainer = styled.div`
+  ${(props) => props.filled}
   background-color: ${theme.background};
-  width: 350px;
+  width: 320px;
   color: ${theme.text};
   border-radius: 15px;
   margin: auto;
-  margin-top: 100px;
   overflow: hidden;
 `
 
