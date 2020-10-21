@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListingsLoaderWrapper } from './styles'
+import { ListingsLoaderWrapper } from '../styles'
 const ListingsLoader = () => {
   return <ListingsLoaderWrapper />
 }

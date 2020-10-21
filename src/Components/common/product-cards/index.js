@@ -7,11 +7,11 @@ import {
   WishListButton,
   BuyActionContainer,
   ActionButton,
-} from './styles'
+} from '../styles'
 import { Img } from 'react-image'
 import ImageLoader from '../image-loader'
 
-const ProductCards = ({ key, data }) => {
+const ProductCards = ({ data }) => {
   const [wishlisted, setWishlisted] = useState(false)
   const [count, setCount] = useState(0)
 
@@ -34,11 +34,11 @@ const ProductCards = ({ key, data }) => {
   }
 
   return (
-    <CardContainer key={key}>
+    <CardContainer>
       <ImageContainer>
-        <Img src={data.images[0]} loader={<ImageLoader />} />
+        <Img src={data && data.images[0]} loader={<ImageLoader />} />
       </ImageContainer>
-      <LabelContainer>{data.name}</LabelContainer>
+      <LabelContainer>{data && data.name}</LabelContainer>
       <ActionContainer>
         <WishListButton
           wishlisted={wishlisted}

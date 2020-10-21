@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageLoaderContainer } from './styles'
+import { ImageLoaderContainer } from '../styles'
 import giphy from 'src/resources/images/giphy.gif'
 
 const ImageLoader = (props) => {

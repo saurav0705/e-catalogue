@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import './App.css'
 import { connect } from 'react-redux'
 import { getProducts } from './store/thunk/fetch-products'
-import ProductCards from './Components/common/product-cards'
 import GridComponent from './Components/common/grid-component'
 import ListingsLoader from './Components/common/listings-loader'
 import ErrorDisplayComponent from './Components/common/error-display'
@@ -14,22 +13,31 @@ const App = ({ getProducts, products }) => {
 
   const getProductsListings = (products) => {
     if (products.loading) {
-      return <ListingsLoader />
+      return (
+        <GridComponent heading={'products'}>
+          <ListingsLoader />
+        </GridComponent>
+      )
     }
 
     if (products.error) {
-      return <ErrorDisplayComponent />
+      return (
+        <GridComponent heading={'products'}>
+          <ErrorDisplayComponent />
+        </GridComponent>
+      )
     }
 
-    return products.data.map((elem, index) => (
-      <ProductCards key={index} data={elem} />
-    ))
+    return (
+      <GridComponent
+        heading={'products'}
+        products={products.data}
+        count={8}
+        infinte={true}
+      />
+    )
   }
-  return (
-    <GridComponent heading={'products'}>
-      {getProductsListings(products)}
-    </GridComponent>
-  )
+  return <React.Fragment>{getProductsListings(products)}</React.Fragment>
 }
 const mapStateToProps = (state) => {
   return {

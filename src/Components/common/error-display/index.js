@@ -3,7 +3,7 @@ import {
   ErrorDisplayIcon,
   ErrorDisplayMessage,
   ErrorDisplayWrapper,
-} from './styles'
+} from '../styles'
 import { BiMessageAltError } from 'react-icons/bi'
 const ErrorDisplayComponent = ({ error }) => {
   return (
