@@ -5,6 +5,7 @@ import { getProducts } from './store/thunk/fetch-products'
 import GridComponent from './Components/common/grid-component'
 import ListingsLoader from './Components/common/listings-loader'
 import ErrorDisplayComponent from './Components/common/error-display'
+import NavbarComponent from './Components/Navbar'
 
 const App = ({ getProducts, products }) => {
   useEffect(() => {
@@ -37,7 +38,12 @@ const App = ({ getProducts, products }) => {
       />
     )
   }
-  return <React.Fragment>{getProductsListings(products)}</React.Fragment>
+  return (
+    <React.Fragment>
+      <NavbarComponent />
+      {/* {getProductsListings(products)} */}
+    </React.Fragment>
+  )
 }
 const mapStateToProps = (state) => {
   return {

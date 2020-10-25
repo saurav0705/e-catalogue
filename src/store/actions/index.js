@@ -15,3 +15,9 @@ export const successProducts = (payload) =>
   actionCreator('SUCCESS_PRODUCTS', payload)
 export const errorProducts = (payload) =>
   actionCreator('ERROR_PRODUCTS', payload)
+
+export const fetchProductsSearch = () => actionCreator('FETCH_PRODUCTS_SEARCH')
+export const successProductsSearch = (payload) =>
+  actionCreator('SUCCESS_PRODUCTS_SEARCH', payload)
+export const errorProductsSearch = (payload) =>
+  actionCreator('ERROR_PRODUCTS_SEARCH', payload)

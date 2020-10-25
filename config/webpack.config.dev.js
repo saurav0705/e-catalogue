@@ -93,6 +93,7 @@ module.exports = {
           : path.resolve(__dirname, '../src/config_dev.json'),
       theme: path.resolve(__dirname, '../src/theme.js'),
       src: path.resolve(__dirname, '../src/'),
+      routes: path.resolve(__dirname, '../src/routes.js'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

@@ -49,8 +49,8 @@ export const ListingsLoaderWrapper = styled.div`
   border: 16px solid ${theme.colors.offWhite};
   border-top: 16px solid ${theme.colors.blue};
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: ${(props) => (props.size ? `${props.size}px` : '120px')};
+  height: ${(props) => (props.size ? `${props.size}px` : '120px')};
   animation: spin 2s linear infinite;
   margin: auto;
   margin-top: 10px;
