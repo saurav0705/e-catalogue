@@ -2,24 +2,25 @@ const initialState = {
   loading: false,
   error: false,
   data: [],
-  clear: true,
+  isLoggedIn: false,
+  isAdmin: false,
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'FETCH_PRODUCTS_SEARCH':
+    case 'LOGIN':
       return { ...state, loading: true }
-    case 'SUCCESS_PRODUCTS_SEARCH':
+    case 'SUCCESS_LOGIN':
       return {
-        data: action.payload.data.products,
+        data: { id: action.payload.data[0]._id },
         loading: false,
         error: false,
-        clear: false,
+        isLoggedIn: true,
       }
-    case 'ERROR_PRODUCTS_SEARCH':
+    case 'ERROR_LOGIN':
       return { ...state, error: true, loading: false }
-    case 'CLEAR_PRODUCTS_SEARCH':
-      return initialState
+    case 'LOG_OUT':
+      return { ...initialState }
     default:
       return state
   }

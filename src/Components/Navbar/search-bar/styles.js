@@ -2,11 +2,18 @@ import styled from 'styled-components'
 import { theme } from 'theme'
 
 export const Input = styled.input`
-  ${(props) => props.filled}
   outline: none;
   border-radius: 4px;
   padding: 9px;
   box-sizing: border-box;
+  background-color: ${theme.colors.offWhite};
+  transition-duration: 200ms;
+  ::placeholder {
+    color: white;
+  }
+  &:focus {
+    background-color: ${theme.colors.white};
+  }
 `
 
 export const SearchIconWrapper = styled.div`
@@ -28,6 +35,7 @@ export const SearchResultWrapper = styled.div`
   text-overflow: ellipsis;
   max-height: 300px;
   overflow-y: scroll;
+  display: ${(props) => (props.show ? 'block' : 'none')};
 `
 export const SearchResult = styled.div`
   width: 150px;
@@ -42,3 +50,4 @@ export const SearchResult = styled.div`
     color: black;
   }
 `
+export const SearchContainer = styled.div``

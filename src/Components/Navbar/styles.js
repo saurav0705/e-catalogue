@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { theme } from 'theme'
 
-const resolution = '900px'
+const resolution = '970px'
 
 export const NavbarWrapper = styled.div`
   display: flex;
@@ -20,7 +20,8 @@ export const NavbarWrapper = styled.div`
 `
 
 export const NavbarTile = styled.div`
-  padding: 15px 15px;
+  padding: ${(props) =>
+    props.label === 'search' || props.label === 'login' ? '0' : '15px 15px'};
   cursor: pointer;
   transition-duration: 200ms;
   position: relative;

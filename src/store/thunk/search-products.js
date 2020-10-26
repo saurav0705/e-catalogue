@@ -5,9 +5,14 @@ import {
   fetchProductsSearch,
   successProductsSearch,
   errorProductsSearch,
+  clearProductsSearch,
 } from '../actions/index'
 
 export const getProductsSearch = (text) => (dispatch) => {
+  if (text === '') {
+    dispatch(clearProductsSearch())
+    return
+  }
   dispatch(fetchProductsSearch())
   return axios
     .get(config.API + SEARCH_PRODUCTS, { params: { name: text } })

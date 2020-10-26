@@ -6,6 +6,7 @@ import {
   NavbarTileSubMenuTile,
 } from './styles'
 import SearchBarComponent from './search-bar'
+import LoginComponent from './login'
 import { config } from './config'
 const NavbarComponent = () => {
   const [display, setDisplay] = useState({})
@@ -31,6 +32,8 @@ const NavbarComponent = () => {
     switch (obj.label.toLowerCase()) {
       case 'search':
         return <SearchBarComponent />
+      case 'login':
+        return <LoginComponent />
       default:
         return (
           <React.Fragment>

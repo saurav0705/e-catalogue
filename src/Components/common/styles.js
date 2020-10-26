@@ -46,8 +46,10 @@ export const ImageLoaderContainer = styled.div`
 `
 
 export const ListingsLoaderWrapper = styled.div`
-  border: 16px solid ${theme.colors.offWhite};
-  border-top: 16px solid ${theme.colors.blue};
+  border: ${(props) => (props.size ? `${props.size / 5}px` : '16px')} solid
+    ${theme.colors.offWhite};
+  border-top: ${(props) => (props.size ? `${props.size / 5}px` : '16px')} solid
+    ${theme.colors.blue};
   border-radius: 50%;
   width: ${(props) => (props.size ? `${props.size}px` : '120px')};
   height: ${(props) => (props.size ? `${props.size}px` : '120px')};
