@@ -1,0 +1,49 @@
+.arrow {
+  display: flex;
+  justify-content: space-between;
+}
+.arrow-right {
+  margin-top: 150px;
+  font-size: 250px;
+}
+
+.arrow-left {
+  margin-top: 150px;
+  font-size: 250px;
+}
+
+.img {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+}
+
+.img1 {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  animation-name: myanimation;
+  animation-duration: 1s;
+}
+.classname {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes myanimation {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 2;
+  }
+  0% {
+    transform: translateX(200px);
+  }
+}
