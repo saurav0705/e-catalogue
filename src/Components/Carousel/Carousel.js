@@ -14,20 +14,13 @@ import './style.css'
 var slideIndex = 1
 const Slider = ({ getCarasoulImages, carasolImages }) => {
   useEffect(() => {
-    {
-      console.log('useeffect')
-    }
-
     getCarasoulImages()
   }, [])
 
   useEffect(() => {
-    console.log(`shiva`, document.getElementsByClassName('img').length)
+    var slides = document.getElementsByClassName('img').length
+    if (slides > 0) showSlides(slideIndex)
   }, [carasolImages])
-
-  window.addEventListener('DOMContentLoaded', function () {
-    showSlides(slideIndex)
-  })
 
   const plusSlides = (n) => {
     showSlides((slideIndex += n))
@@ -43,18 +36,12 @@ const Slider = ({ getCarasoulImages, carasolImages }) => {
     if (n < 1) {
       slideIndex = slides.length
     }
+
     for (i = 0; i < slides.length; i++) {
       console.log(`gursimra`, slides)
       slides[i].style.display = 'none'
-      //   slides[i]?.style !== 'undefined'
-      //     ? (slides[i].style.display = 'none')
-      //     : console.log(null)
     }
     console.log(`gursimra`, slides[slideIndex - 1])
-
-    // slides[slideIndex - 1]?.style !== 'undefined'
-    //   ? (slides[slideIndex - 1].style.display = 'none')
-    //   : console.log(null)
 
     slides[slideIndex - 1].style.display = 'block'
   }
@@ -63,22 +50,26 @@ const Slider = ({ getCarasoulImages, carasolImages }) => {
     <Slide>
       {console.log('render')}
       <section className="carousel">
-        <AiOutlineArrowLeft
+        <section
           className="arrow-left"
           onClick={() => {
             plusSlides(1)
           }}
-        />
+        >
+          &#10094;
+        </section>
         {carasolImages.data.map((item, index) => {
           return <img src={item} alt="image" className="img" key={index} />
         })}
 
-        <AiOutlineArrowRight
+        <section
           className="arrow-right"
           onClick={() => {
             plusSlides(-1)
           }}
-        />
+        >
+          &#10095;
+        </section>
       </section>
     </Slide>
   )

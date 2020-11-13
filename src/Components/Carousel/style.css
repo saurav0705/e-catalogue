@@ -1,15 +1,42 @@
 .arrow {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
 }
-.arrow-right {
-  margin-top: 150px;
-  font-size: 250px;
+/* .arrow-right {
+  margin-top: 250px;
+  font-size: 50px;
 }
 
 .arrow-left {
-  margin-top: 150px;
-  font-size: 250px;
+  margin-top: 250px;
+  font-size: 50px;
+} */
+
+.arrow-right,
+.arrow-left {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: grey;
+  margin-top: -180px;
+
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 1px 1px 1px 1px;
+  user-select: none;
+  border: 1px solid gray;
+}
+.arrow-right {
+  right: 0;
+}
+
+.arrow-right:hover,
+.arrow-left:hover {
+  background-color: whitesmoke;
 }
 
 .img {
@@ -17,6 +44,8 @@
   width: 100%;
   overflow: hidden;
   display: none;
+  animation-name: myanimation;
+  animation-duration: 1s;
 }
 
 .img1 {
@@ -45,5 +74,11 @@
   }
   0% {
     transform: translateX(200px);
+  }
+  0% {
+    display: block;
+  }
+  100% {
+    display: block;
   }
 }
