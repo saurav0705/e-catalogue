@@ -6,7 +6,6 @@ import { SlideContainer, ImageWrapper } from './styles'
 import { Carousel } from 'react-responsive-carousel'
 import { Slide } from './slide'
 import { AiOutlineArrowRight } from 'react-icons/ai'
-import { AiOutlineArrowLeft } from 'react-icons/ai'
 import './style.css'
 
 //import SliderContent from './SliderContent'
