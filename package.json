@@ -38,6 +38,7 @@
     "react-icons": "^3.11.0",
     "react-image": "^4.0.3",
     "react-redux": "^5.1.2",
+    "react-responsive-carousel": "^3.2.10",
     "react-utility-box": "^1.0.122",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
