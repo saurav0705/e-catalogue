@@ -6,6 +6,7 @@ import GridComponent from './Components/common/grid-component'
 import ListingsLoader from './Components/common/listings-loader'
 import ErrorDisplayComponent from './Components/common/error-display'
 import NavbarComponent from './Components/Navbar'
+import Slider from './Components/Carousel/Carousel'
 
 const App = ({ getProducts, products }) => {
   useEffect(() => {
@@ -40,7 +41,8 @@ const App = ({ getProducts, products }) => {
   }
   return (
     <React.Fragment>
-      <NavbarComponent />
+      <Slider />
+      {/* <NavbarComponent /> */}
       {/* {getProductsListings(products)} */}
     </React.Fragment>
   )

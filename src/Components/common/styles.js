@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { theme } from 'theme'
 
 export const ErrorDisplayWrapper = styled.div`
@@ -129,3 +129,102 @@ export const ReachedBottom = styled.div`
   ${(props) => props.filled}
   height: 20px;
 `
+
+const CarasolNavigators = styled.div`
+  height: 30px;
+  width: 30px;
+  background-color: gray;
+  position: absolute;
+  top: 40%;
+  z-index: 2;
+  opacity: 0.6;
+  margin: 4px;
+  transition-duration: 500ms;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+`
+export const CarasolNavigatorsLeft = styled(CarasolNavigators)`
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  left: 0;
+`
+export const CarasolNavigatorsRight = styled(CarasolNavigators)`
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  right: 0;
+`
+
+export const CarasolWrapper = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`
+
+export const CarasolContent = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    animation-name: ${() => animate};
+    animation-duration: 1s;
+  }
+`
+
+export const CarasolContainer = styled.div`
+  height: ${(props) => props.height || '400px'};
+  width: ${(props) => props.width || '100%'};
+`
+
+export const ImageLoader = styled.div`
+  height: 20%;
+  width: 20%;
+  background-color: pink;
+  opacity: 0.5;
+  clip-path: polygon(
+    50% 0%,
+    90% 20%,
+    100% 60%,
+    75% 100%,
+    25% 100%,
+    0% 60%,
+    10% 20%
+  );
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation-name: ${() => rotate()};
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+`
+const rotate = () => keyframes`
+  from {
+    transform: rotate(0deg);
+    
+  }
+  to {
+    transform: rotate(360deg);
+   
+  }
+`
+const animate = keyframes`{
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 2;
+  }
+  0% {
+    transform: translateX(200px);
+  }
+  0% {
+    display: block;
+  }
+  100% {
+    display: block;
+  }
+}`
